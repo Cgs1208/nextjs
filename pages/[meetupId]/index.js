@@ -32,7 +32,8 @@ export async function getStaticPaths() {
   client.close();
 
   return {
-    fallback: "blocking", //true-first emty page and then get data , blocking-user will not see anything until page is generated with data
+    fallback: "blocking", //true-first emty page and then get data ,
+    // blocking-user will not see anything until page is generated with data
     paths: meetups.map((meetup) => ({
       params: { meetupId: meetup._id.toString() },
     })),
